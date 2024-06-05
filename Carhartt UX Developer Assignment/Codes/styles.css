@@ -1,0 +1,312 @@
+/* 
+-----------------------------------------------
+                    FONTS 
+-----------------------------------------------
+*/
+
+@font-face {
+    font-family: Tungsten-Bold;
+    src: url(../Assets/fonts/Tungsten-Bold.ttf);
+}
+
+@font-face {
+    font-family: Tungsten;
+    src: url(../Assets/fonts/Tungsten-Book.otf);
+}
+
+@font-face {
+    font-family: Trade-Gothic;
+    src: url(../Assets/fonts/Trade-Gothic-LT.ttf);
+}
+
+@font-face {
+    font-family: Trade-Gothic-Bold;
+    src: url(../Assets/fonts/Trade-Gothic-LT-Bold.ttf);
+}
+
+/*
+------------------------------------------
+                    STYLES
+------------------------------------------
+*/
+
+
+/* STANDARDS/GLOBALS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+body {
+    /* using 80% width so that not the entire space is taken up by the body - personal preference */
+    width: 80%;
+    /* would insert grid here if applicable (N/A for these components) */
+}
+
+/* HTML-selectors */
+
+#main {
+    margin: 5%;
+}
+
+button {
+    /* would revisit a better solution to get more responsive button component design - max width */
+    max-width: 223px;
+
+    border-radius: 5px;
+    transition: 0.3s;
+
+    /*FONT SETTINGS*/
+    font-family: Trade-Gothic-Bold;
+    font-size: 14px;
+    /*font-weight: 700;  -->
+        This is imported from FIGMA[dev] and ideally could be hooked to the font, 
+        however due to licensing issues I couldn't get full access to these fonts.*/
+    line-height: 14px;
+    letter-spacing: 0.93px;
+    text-align: center;
+}
+
+img {
+    background: #D61C2C;
+    width: 100%;
+    height: auto;
+    border-radius: inherit;
+}
+
+sup {
+    align-self: flex-start;
+    font-size: 50%;
+    height: 0;
+    line-height: 1;
+}
+
+/*
+---------------
+CLASS SELECTORS
+---------------
+*/
+
+.component {
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+
+    /*NOT IDEAL solution to keep aspect ratio the same, but works for now*/
+    max-width: 1280px;
+    width: 1280px;
+}
+
+.copy-alt {
+    font-size: 32px;
+    /* font-weight: 350; -->
+        This is imported from FIGMA[dev] and ideally could be hooked to the font, 
+        however due to licensing issues I couldn't get full access to these fonts.*/
+    line-height: 28px;
+    letter-spacing: 1px;
+    text-align: center;
+
+}
+
+.copy-bold {
+    font-family: Tungsten-Bold;
+    font-size: 80px;
+    /*font-weight: 400; --> 
+        This is imported from FIGMA[dev] and ideally could be hooked to the font, 
+        however due to licensing issues I couldn't get full access to these fonts.*/
+    line-height: 60px;
+    letter-spacing: 1.75px;
+    text-align: center;
+}
+
+/* 
+------------
+ID SELECTORS
+------------
+*/
+
+/*
+FIRST DIV (WINTER SALE)
+*/
+
+#WINTER_SALE {
+    align-items: center;
+    justify-content: center;
+}
+
+#content-red {
+    position: absolute;
+    margin: auto;
+
+    /*FONT SETTINGS*/
+    font-family: Tungsten;
+    font-size: 40px;
+   /* font-weight: 350; -->
+    This is imported from FIGMA[dev] and ideally could be hooked to the font, 
+    however due to licensing issues I couldn't get full access to these fonts.*/
+    line-height: 40px;
+    letter-spacing: 1.75px;
+    text-align: center;
+    background: none;
+}
+
+#CTA-red {
+    margin-top: 10px;
+    padding: 9px 20px;
+    line-height: 32px;
+    border: 2px solid #fff;
+    background: #D61C2C;
+}
+
+#CTA-red:hover {
+    color: #D61C2C;
+    background: #fff;
+}
+
+#CTA-red:active {
+    border: 2px solid #D61C2C;
+    /* shortened transition time just for clicking */
+    transition: 0.2s;
+}
+
+/*
+SECOND DIV (FATHERS DAY) 
+*/
+
+#FATHERS_DAY {
+    margin-top: 5%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#content-yellow {
+    
+    /* Aligning itmes to the hero banner*/
+    position: absolute;
+    left: 72px; /* Would revisit this to be consistent visually, regardless of screen size */
+    display: flex;
+    flex-direction: column;
+    row-gap: 26px;
+
+
+    font-family: Tungsten-Bold;
+    font-size: 70px;
+    /* font-weight: 400; -->
+        This is imported from FIGMA[dev] and ideally could be hooked to the font, 
+        however due to licensing issues I couldn't get full access to these fonts.*/
+    line-height: 60px;
+    letter-spacing: 1.75px;
+    text-align: left;
+}
+
+#CTA-yellow {
+    padding: 20px 35px;
+    border: none;
+    background: #FEB913;
+    color: #000;
+}
+
+/*
+--------------------------------------------------------------------
+                        RESPONSIVITY
+--------------------------------------------------------------------
+
+    If given more time, I would spend more time on optimisation for different screens and breakpoints, 
+    as well as transforming text from being set in px to a more responsive unit (likely em/rem).
+*/
+
+/* MOBILE VIEW */
+
+@media only screen and (max-width: 768px) {
+    .component {
+        width: 372px;
+    }
+
+    /* 
+    -------------------------
+    Winter Sale - Mobile View 
+    -------------------------
+    */
+
+    #WINTER_SALE {
+        justify-content: left;
+    }
+
+    #Hero-WS {
+        content: url(../Assets/images/WinterSale_BannerFlats_Mobile.png);
+    }
+
+    #content-red {
+        position: absolute;
+        margin: auto;
+        max-width: 50%;
+        left: 26px;
+        top: 29px;
+
+        /*FONT SETTINGS*/
+        font-size: 32px;
+        line-height: 28px;
+        letter-spacing: 0.8999999761581421px;
+        text-align: left;
+    }
+
+    .copy-alt {
+        font-size: 24px;
+        line-height: 20px;
+        letter-spacing: 0.8999999761581421px;
+        text-align: left;
+
+    }
+
+    .copy-bold {
+        font-size: 60px;
+        line-height: 55px;
+        letter-spacing: 0.8999999761581421px;
+        text-align: left;
+    }
+
+    #CTA-red {
+        margin-top: 10px;
+        padding: 9px 20px;
+
+        color: #D61C2C;
+        border: 2px solid #fff;
+        background: #fff;
+
+        
+        font-size: 14px;
+        line-height: 32px;
+        letter-spacing: 0.93px;
+        text-align: left;
+    }
+
+    /* 
+    -------------------------
+    Fathers Day - Mobile View 
+    -------------------------
+    */
+
+    #Hero-FD {
+        content: url(../Assets/images/F23_Ross_MaschinoLumberCo_1981_Mobile.png);
+    }
+
+    #content-yellow {
+        align-self: center;
+        left: auto;
+        bottom: 50px;
+        align-items: center;
+        row-gap: 20px;
+
+        /*FONT SETTINGS*/
+        font-size: 40px;
+        line-height: 35px;
+        letter-spacing: 0.9px;
+        text-align: center;
+    }
+
+}
